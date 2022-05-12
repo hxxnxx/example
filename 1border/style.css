@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+
+.loader{height: 100vh;}
+.loaer_blob{
+    position: absolute;
+    width: 480px;
+    height: 479px;
+    left: 50%;
+    top: 50%;
+    /* translate의 백분율은 기준이 자신이다 */
+    transform: translate(-50%,-50%);
+    animation: yxx 6s infinite alternate;
+    overflow: hidden;
+}
+.loader_blob img{width: 100%;}
+
+/* 선애니 */
+.ro{position: relative;
+    width: 480px; height: 479px;
+    left: calc(50% - 240px);
+    top:  calc(50% - 240px);
+    /* translate의 백분율은 기준이 자신이다 */
+   
+    animation: rotate 6s infinite alternate;}
+.ro .loader_blob2{
+    width: 480px;
+    height: 479px;
+    border: 1px solid #999;
+    animation: yxx 6s infinite alternate;
+}
+
+
+@keyframes yxx{
+    0%{border-radius: 62% 57% 54% 74% / 59% 71% 41% 57% ;}
+    50%{border-radius: 62% 57% 54% 74% / 45% 71% 41% 88% ;}
+    100%{border-radius: 97% 52% 72% 49% / 58% 87% 31% 96% ;}
+}
+
+@keyframes rotate{
+    0%{
+        /* 0초 */
+        /* deg --> degree 각도 */
+        transform: rotate(0deg)
+    }
+    100%{
+        /* 6초가 끝나는 지점 */
+        transform: rotate(360deg);
+    }
+}
